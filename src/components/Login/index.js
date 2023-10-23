@@ -11,7 +11,7 @@ export function Login( {navigation} ) {
     return (
         <View style={estilos.container}>
             <Image style={estilos.imagem} source={require('../../../assets/login.png')}/>
-            <Text>LOGIN</Text>
+            <Text style={estilos.textoLogin}>LOGIN</Text>
             <TextInput 
                 label='Email'
                 value={email}
