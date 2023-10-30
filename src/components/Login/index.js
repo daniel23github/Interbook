@@ -6,7 +6,9 @@ import { estilos } from './estilos'
 
 export function Login( {navigation} ) {
     const [email, setEmail] = useState('')
+    const [senha, setSenha] = useState('')
     const [statusError, setStatusError] = useState('')
+    const [secureMode, setSecureMode] = useState(true)
 
     return (
         <View style={estilos.container}>
@@ -19,6 +21,20 @@ export function Login( {navigation} ) {
                 mode='outlined'
                 keyboardType='email-address'
                 error={statusError == 'email'}
+                style={estilos.input} />
+            <TextInput
+                label="Senha"
+                value={senha}
+                onChangeText={setSenha}
+                mode="outlined"
+                error={statusError == 'senha'}
+                secureTextEntry={secureMode}
+                right={
+                    <TextInput.Icon
+                        icon={secureMode ? 'eye-off' : 'eye'}
+                        onPress={() => setSecureMode(!secureMode)}
+                    />
+                }
                 style={estilos.input} />
         </View>
     )
