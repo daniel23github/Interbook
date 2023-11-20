@@ -35,7 +35,7 @@ export function Cadastrar( {navigation} ) {
                 onChangeText={setSenha}
                 mode="outlined"
                 error={statusError == 'senha'}
-                secureTextEntry={secureMode}
+                secureTextEntry
                 style={estilos.input} />
             <TextInput
                 label="Confirmar Senha"
@@ -43,7 +43,7 @@ export function Cadastrar( {navigation} ) {
                 onChangeText={setConfirmaSenha}
                 mode="outlined"
                 error={statusError == 'confirmaSenha'}
-                secureTextEntry={secureMode}
+                secureTextEntry
                 style={estilos.input} />
             <TouchableOpacity>
                 <Text style={estilos.textoCadastroCadastrar} onPress={() => navigation.navigate('Login')}>Cadastrar</Text>
