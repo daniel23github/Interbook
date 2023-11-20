@@ -4,16 +4,23 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { TextInput, HelperText, Snackbar } from 'react-native-paper'
 import { estilos } from './estilos'
 
-export function Login( {navigation} ) {
+export function Cadastrar( {navigation} ) {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
+    const [nome, setNome] = useState('')
+    const [confirmaSenha, setConfirmaSenha] = useState('')
     const [statusError, setStatusError] = useState('')
-    const [secureMode, setSecureMode] = useState(true)
 
     return (
         <View style={estilos.container}>
-            <Image style={estilos.imagem} source={require('../../../assets/login.png')}/>
-            <Text style={estilos.textoLogin}>LOGIN</Text>
+            <Text style={estilos.textoCadastro}>CADASTRO</Text>
+            <TextInput 
+                label='Nome'
+                value={nome}
+                onChangeText={setNome}
+                mode='outlined'
+                error={statusError == 'nome'}
+                style={estilos.input} />
             <TextInput 
                 label='Email'
                 value={email}
@@ -29,18 +36,17 @@ export function Login( {navigation} ) {
                 mode="outlined"
                 error={statusError == 'senha'}
                 secureTextEntry={secureMode}
-                right={
-                    <TextInput.Icon
-                        icon={secureMode ? 'eye-off' : 'eye'}
-                        onPress={() => setSecureMode(!secureMode)}
-                    />
-                }
+                style={estilos.input} />
+            <TextInput
+                label="Confirmar Senha"
+                value={confirmaSenha}
+                onChangeText={setConfirmaSenha}
+                mode="outlined"
+                error={statusError == 'confirmaSenha'}
+                secureTextEntry={secureMode}
                 style={estilos.input} />
             <TouchableOpacity>
-                <Text style={estilos.textoLoginEntrar}>Entrar</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-                <Text style={estilos.textoLoginCadastrar} onPress={() => { navigation.navigate('Cadastrar')}}>Cadastre-se</Text>
+                <Text style={estilos.textoCadastroCadastrar} onPress={() => navigation.navigate('Login')}>Cadastrar</Text>
             </TouchableOpacity>
         </View>
     )

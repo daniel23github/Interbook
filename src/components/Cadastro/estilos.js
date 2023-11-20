@@ -17,27 +17,7 @@ export const estilos = StyleSheet.create({
         backgroundColor: "#fff",
     },
 
-    imagem: {
-        width: 150,
-        height: 150
-    },
-
-    textoLogin: {
-        fontFamily: 'alatsi',
-        fontweight: 'bolder',
-        backgroundColor: '#76CBFC',
-        paddingLeft: '90px',
-        paddingRight: '90px ',
-        paddingBottom: '6px',
-        paddingTop: '6px',
-        borderRadius: '20px',
-        color: '#0E8CD6',
-        fontSize: '45px',
-        margin: '10px'
-
-    },
-
-    textoLoginEntrar: {
+    textoCadastro: {
         fontFamily: 'alatsi',
         fontweight: 'bolder',
         backgroundColor: '#76CBFC',
@@ -52,7 +32,19 @@ export const estilos = StyleSheet.create({
 
     },
 
-    textoLoginCadastrar: {
-        color: '#D9D9D9'
-    }
+    textoCadastroCadastrar: {
+        fontFamily: 'alatsi',
+        fontweight: 'bolder',
+        backgroundColor: '#76CBFC',
+        paddingLeft: '40px',
+        paddingRight: '40px ',
+        paddingBottom: '6px',
+        paddingTop: '6px',
+        borderRadius: '20px',
+        color: '#0E8CD6',
+        fontSize: '25px',
+        margin: '10px'
+
+    },
+
 })
