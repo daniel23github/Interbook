@@ -1,5 +1,6 @@
 import { createUserWithEmailAndPassword, AuthErrorCodes, signInWithEmailAndPassword } from "firebase/auth"
-import { auth } from "../config/firebase"
+import { auth, db, app } from "../config/firebase"
+import { collection, addDoc, getDocs, doc, updateDoc, deleteDoc, query, onSnapshot, setDoc } from "firebase/firestore";
 
 function verificarErro(error) {
     let mensagem = ''
@@ -19,15 +20,17 @@ function verificarErro(error) {
     return mensagem
 }
 
-export async function cadastrar(email, senha) {
-    const resultado = await createUserWithEmailAndPassword(auth, email, senha)
-        .then(() => {
+export async function cadastrar(dados) {
+    const resultado = await createUserWithEmailAndPassword(auth, dados.email, dados.senha)
+    const nome = dados.nome
+    const email = dados.email
+        try {
+            await setDoc(doc(db, 'Users', resultado.user.uid), {nome, email})
             return 'sucesso'
-        })
-        .catch((error) => {
+        }
+        catch (error)  {
             return verificarErro(error)
-        })
-    return resultado
+        }
 }
 
 export async function logar(email, senha) {
@@ -40,5 +43,5 @@ export async function logar(email, senha) {
             console.log(error)
             return 'Erro ao logar'
         })
-    return sucesso
+    return 'sucesso'
 }
