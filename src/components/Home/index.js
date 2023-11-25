@@ -18,7 +18,6 @@ export function Home( {navigation} ) {
         }
         
         pegarDados()
-        console.log(data)
     }, [])
 
     return (
