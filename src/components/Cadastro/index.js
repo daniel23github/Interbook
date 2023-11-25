@@ -71,7 +71,8 @@ export function Cadastrar( {navigation} ) {
                 onChangeText={setNome}
                 mode='outlined'
                 error={statusError == 'nome'}
-                style={estilos.input} />
+                style={estilos.input}
+                theme={{roundness: 50}} />
             {statusError == 'nome' ? <HelperText type="error" visible={statusError == 'nome'}>
                     {mensagemError}
                 </HelperText> : null}
@@ -82,7 +83,8 @@ export function Cadastrar( {navigation} ) {
                 mode='outlined'
                 keyboardType='email-address'
                 error={statusError == 'email'}
-                style={estilos.input} />
+                style={estilos.input} 
+                theme={{roundness: 50}} />
             {statusError == 'email' ? <HelperText type="error" visible={statusError == 'email'}>
                     {mensagemError}
                 </HelperText> : null}
@@ -93,7 +95,8 @@ export function Cadastrar( {navigation} ) {
                 mode="outlined"
                 error={statusError == 'senha'}
                 secureTextEntry
-                style={estilos.input} />
+                style={estilos.input} 
+                theme={{roundness: 50}} />
             {statusError == 'senha' ? <HelperText type="error" visible={statusError == 'senha'}>
                     {mensagemError}
                 </HelperText> : null}
@@ -104,7 +107,8 @@ export function Cadastrar( {navigation} ) {
                 mode="outlined"
                 error={statusError == 'confirmaSenha'}
                 secureTextEntry
-                style={estilos.input} />
+                style={estilos.input} 
+                theme={{roundness: 50}} />
             {statusError == 'confirmaSenha' ? <HelperText type="error" visible={statusError == 'confirmaSenha'}>
                     {mensagemError}
                 </HelperText> : null}

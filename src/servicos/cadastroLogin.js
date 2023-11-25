@@ -31,6 +31,7 @@ export async function cadastrar(dados) {
         catch (error)  {
             return verificarErro(error)
         }
+    
 }
 
 export async function logar(email, senha) {
@@ -43,5 +44,5 @@ export async function logar(email, senha) {
             console.log(error)
             return 'Erro ao logar'
         })
-    return 'sucesso'
+    return resultado
 }

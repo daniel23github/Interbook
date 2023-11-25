@@ -28,12 +28,13 @@ export function Login( {navigation} ) {
             setMensagemError('')
             setStatusError('')
             const resultado = await logar(email, senha)
-            if (resultado == 'sucesso') {
+            if (resultado == 'Sucesso') {
                 navigation.navigate('Home')
                 setEmail('')
                 setSenha('')
-            } else
+            } else {
                 setStatusSnakbar(true)
+                }
             setMensagemSnakbar("E-mail ou senha inválida")
             console.log(resultado)
         }
@@ -51,7 +52,8 @@ export function Login( {navigation} ) {
                 mode='outlined'
                 keyboardType='email-address'
                 error={statusError == 'email'}
-                style={estilos.input} />
+                style={estilos.input} 
+                theme={{roundness: 50}} />
                 {statusError == 'email' ? <HelperText type="error" visible={statusError == 'email'}>
                     {mensagemError}
                 </HelperText> : null}
@@ -68,7 +70,8 @@ export function Login( {navigation} ) {
                         onPress={() => setSecureMode(!secureMode)}
                     />
                 }
-                style={estilos.input} />
+                style={estilos.input} 
+                theme={{roundness: 50}} />
                 {statusError == 'senha' ? <HelperText type="error" visible={statusError == 'senha'}>
                     {mensagemError}
                 </HelperText> : null}

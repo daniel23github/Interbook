@@ -15,6 +15,7 @@ export const estilos = StyleSheet.create({
         paddingHorizontal: 10,
         marginTop: 10,
         backgroundColor: "#fff",
+        borderRadius: 50
     },
 
     textoCadastro: {
