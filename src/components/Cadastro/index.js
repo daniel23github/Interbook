@@ -21,6 +21,7 @@ export function Cadastrar( {navigation} ) {
         setNome('')
         navigation.navigate('Login')
     }
+    
     async function realizarCadastro() {
         if (nome == '') {
             setMensagemError('Não pode deixar o nome vazio!')

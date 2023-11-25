@@ -3,6 +3,10 @@ import { StyleSheet } from 'react-native'
 const cor1 = '#38B6FF'
 
 export const estilos = StyleSheet.create({
+    container: {
+        marginTop: '100px'
+    },
+    
     navbar: {
         backgroundColor: cor1,
         alignItems: 'center'
@@ -29,19 +33,19 @@ export const estilos = StyleSheet.create({
         backgroundColor: "#fff",
         borderRadius: 50,
         marginTop: '8vh',
-        marginBottom: '8px'
+        marginBottom: '12px'
     },
 
     banner: {
         width: '100%',
-        height: '100%',
+        height: '20%',
         backgroundSize: 'cover'
     },
 
     categorias: {
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        flexWrap: 'wrap'
+        display: 'flex'
 
     },
 
@@ -56,18 +60,16 @@ export const estilos = StyleSheet.create({
     texto: {
         color: "#0E8CD6",
         fontSize: '1.2em',
-        fontFamily: 'Alatsi'
+        fontFamily: 'alatsi'
     },
     
     destaques: {
         backgroundColor: cor1,
-        width: '90vw',
         borderRadius: '10px',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-evenly',
-        flexWrap: 'wrap',
         fontWeight: 'bolder',
         margin: '6px'
-    }
+    },
 })
