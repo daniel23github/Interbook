@@ -13,6 +13,7 @@ export function Cabecalho({ navigation }) {
     const user_id = user.uid
     const [modalVisible, setModalVisible] = useState(false)
     const [data, setData] = useState({})
+    const [pesquisa, setPesquisa] = useState('')
 
     async function pegarDados() {
         const dados = await coletarDadosUsuario(user_id)
@@ -24,6 +25,10 @@ export function Cabecalho({ navigation }) {
         
         
     }, [])
+
+    function pesquisar() {
+        
+    }
 
     return (
         <View>
@@ -41,11 +46,21 @@ export function Cabecalho({ navigation }) {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <TextInput theme={{roundness: 50}}style={estilos.input} underlineColor='transparent' placeholder='busque aqui seu produto' placeholderTextColor="rgba(0, 0, 0, 0.2)" right={
-                    <TextInput.Icon
-                        icon={'magnify'} color='#76CBFC'
-                    />
-                }/>
+                <TextInput 
+                    theme={{roundness: 50}}
+                    style={estilos.input} underlineColor='transparent' placeholder='busque aqui seu produto' placeholderTextColor="rgba(0, 0, 0, 0.2)" 
+                    right={
+                        <TextInput.Icon
+                            onPress={() => {
+                                navigation.replace('pesquisa', pesquisa)
+                                setPesquisa('')
+                            }}
+                            icon={'magnify'} color='#76CBFC'
+                        />
+                    }
+                    value={pesquisa}
+                    onChangeText={setPesquisa}
+                />
             </View>
             <Modal
             isVisible={modalVisible}

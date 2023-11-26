@@ -40,7 +40,6 @@ export function Home( {navigation} ) {
         
         
     }, [])
-    console.log(categorias)
     return (
         <View style={estilos.container}>
             <ScrollView>

@@ -281,3 +281,40 @@ export async function pegarProdutosCategoriaTempoReal(id, setProdutos) {
 
     setProdutos(produtos)
 }
+
+export async function Buscar(pesquisa) {
+    const querySnapshot = await getDocs(collection(db, 'Produtos'))
+        let produtos = []
+        querySnapshot.forEach((doc) => {
+            let produto = { id: doc.id, ...doc.data() }
+            produtos.push(produto)
+        })
+    const filtrados = []
+    for (let c = 0; c < produtos.length; c++) {
+        const nome = produtos[c]['informacao']
+        const verifica = nome.includes(pesquisa)
+        if (verifica) {
+            filtrados.push(produtos[c])
+        }
+    }
+    return filtrados
+}
+
+export async function BuscarTempoReal(pesquisa , setProdutos) {
+    const querySnapshot = await getDocs(collection(db, 'Produtos'))
+        let produtos = []
+        querySnapshot.forEach((doc) => {
+            let produto = { id: doc.id, ...doc.data() }
+            produtos.push(produto)
+        })
+    const filtrados = []
+    for (let c = 0; c < produtos.length; c++) {
+        const nome = produtos[c]['informacao']
+        const verifica = nome.includes(pesquisa)
+        if (verifica) {
+            filtrados.push(produtos[c])
+        }
+    }
+
+    setProdutos(filtrados)
+}
