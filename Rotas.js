@@ -12,6 +12,7 @@ import { Favorito } from './src/components/Favorito/index'
 import { AdicionarDestaque } from './src/components/AdicionarDestaque/index'
 import { AdicionarCategoria } from './src/components/AdicionarCategoria/index'
 import { TelaCategoria } from './src/components/TelaCategoria/index'
+import { AdicionarParaCategoria } from './src/components/AdicionarParaCategoria/index'
 
 export function Rotas() {
     const Stack = createNativeStackNavigator()
@@ -27,8 +28,9 @@ export function Rotas() {
                 <Stack.Screen name='Carrinho' component={Carrinho} options={{ header: (props) => <Cabecalho {...props} /> }} />
                 <Stack.Screen name='Favorito' component={Favorito} options={{ header: (props) => <Cabecalho {...props} /> }} />
                 <Stack.Screen name='adicionarDestaque' component={AdicionarDestaque} options={{ header: (props) => <Cabecalho {...props} /> }} />
-                <Stack.Screen name='adicionarCategoria' component={AdicionarCategoria} options={{ headerShow: false }} />
+                <Stack.Screen name='adicionarCategoria' component={AdicionarCategoria} options={{ headerShown: false }} />
                 <Stack.Screen name='telaCategoria' component={TelaCategoria} options={{ header: (props) => <Cabecalho {...props} /> }} />
+                <Stack.Screen name='adicionarParaCategoria' component={AdicionarParaCategoria} options={{ header: (props) => <Cabecalho {...props} /> }} />
             </Stack.Navigator>
         </NavigationContainer>
     )

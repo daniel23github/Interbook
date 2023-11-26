@@ -256,7 +256,7 @@ export async function pegarProdutosCategoria(id) {
         const docProd = doc(db, 'Produtos', chaves[c]) 
         const produto = await getDoc(docProd)
         const dadosDoProduto = { id: produto.id, ...produto.data() }
-        if (c != 0) {
+        if (chaves[c] != 'nome') {
             produtos.push(dadosDoProduto)
         }
     }
@@ -274,7 +274,7 @@ export async function pegarProdutosCategoriaTempoReal(id, setProdutos) {
         const docProd = doc(db, 'Produtos', chaves[c]) 
         const produto = await getDoc(docProd)
         const dadosDoProduto = { id: produto.id, ...produto.data() }
-        if (c != 0) {
+        if (chaves[c] != 'nome') {
             produtos.push(dadosDoProduto)
         }
     }

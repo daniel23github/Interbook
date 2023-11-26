@@ -30,6 +30,10 @@ export function TelaCategoria( {navigation, route} ) {
         
     }, [])
 
+    function redirecionar() {
+        navigation.replace('adicionarParaCategoria', route?.params)
+    }
+
     return (
         <View style={estilos.container}>
             <Text style={estilos.texto}>{route?.params?.nome}</Text>
@@ -44,9 +48,11 @@ export function TelaCategoria( {navigation, route} ) {
                     }
                     
             </View>
-            <TouchableOpacity onPress={(navigation.replace('AdicionarParaCategoria', route?.params))} style={estilos.containerBotao}>
+            { user.email == 'd@gmail.com' &&
+                <TouchableOpacity onPress={redirecionar} style={estilos.containerBotao}>
                     <Text style={estilos.adicionar}>Adicionar Livros</Text>
-            </TouchableOpacity>
+                </TouchableOpacity>
+            }
         </View>
     )
 }

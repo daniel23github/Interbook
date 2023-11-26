@@ -4,12 +4,12 @@ import { TextInput, HelperText, Snackbar } from 'react-native-paper'
 import { estilos } from './estilos'
 import { auth } from './../../config/firebase'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { ProdutoAdicionado } from './../ProdutoAdicionado/index'
+import { ProdutoAdicionadoCategoria } from './../ProdutoAdicionadoCategoria/index'
 import { pegarProdutos, pegarProdutoTempoReal } from './../../servicos/firestore'
 
 
 
-export function AdicionarDestaque( {navigation} ) {
+export function AdicionarParaCategoria( {navigation, route} ) {
     const [produtos, setProdutos] = useState([])
     const [refreshing, setRefreshing] = useState(false)
     const user = auth.currentUser
@@ -30,14 +30,15 @@ export function AdicionarDestaque( {navigation} ) {
         
         
     }, [])
+    console.log(route?.params?.id, route?.params?.nome)
 
     return (
         <View style={estilos.container}>
-            <Text style={estilos.texto}>Adicionar aos destaques</Text>
+            <Text style={estilos.texto}>Adicionar a Categoria {route?.params?.nome}</Text>
             <View>  
             { produtos.length > 0 && (<FlatList
                         data={produtos}
-                        renderItem={({ item }) => <ProdutoAdicionado id={item.id} navigation={navigation} informacao={item.informacao} precoAntigo={item['precoAntigo']} precoAtual={item['precoAtual']} imagem={item['url']}/>}
+                        renderItem={({ item }) => <ProdutoAdicionadoCategoria id={item.id} id_categoria={route?.params?.id} navigation={navigation} informacao={item.informacao} precoAntigo={item['precoAntigo']} precoAtual={item['precoAtual']} imagem={item['url']}/>}
                         keyExtractor={item => item.id}
                         refreshing={refreshing}
                         onRefresh={pegarDados}
