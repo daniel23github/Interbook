@@ -56,14 +56,14 @@ export function Home( {navigation} ) {
                 <View>  
                     { produtos.length > 0 && (<FlatList
                         data={produtos}
-                        renderItem={({ item }) => <Produto id={item.id}navigation={navigation} informacao={item.informacao} precoAntigo={item['precoAntigo']} precoAtual={item['precoAtual']} imagem={item['url']}/>}
+                        renderItem={({ item }) => <Produto id={item.id} navigation={navigation} informacao={item.informacao} precoAntigo={item['precoAntigo']} precoAtual={item['precoAtual']} imagem={item['url']}/>}
                         keyExtractor={item => item.id}
                         refreshing={refreshing}
                         onRefresh={pegarDados}
                     />)
                     }
                     
-                </View>
+                </View> 
             </View>
             <TouchableOpacity onPress={() => {navigation.navigate('adicionarProduto')}}>
                 <Text>Enviar</Text>

@@ -14,8 +14,8 @@ export const estilos = StyleSheet.create({
 
     fundo: {
         backgroundColor: "#fff",
-        height: Dimensions.get("window").height * 0.2,
-        width: Dimensions.get("window").width * 0.22,
+        height: 100,
+        width: 100,
         borderRadius: 10,
         margin: 10,
         justifyContent: "center",
@@ -28,8 +28,8 @@ export const estilos = StyleSheet.create({
 
     imagem: {
         backgroundColor: "#fff",
-        height: Dimensions.get("window").height * 0.18,
-        width: Dimensions.get("window").width * 0.18,
+        height: "80%",
+        width: "80%",
         borderRadius: 10,
         margin: 10
     },
