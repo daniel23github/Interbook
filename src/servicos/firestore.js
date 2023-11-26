@@ -98,3 +98,19 @@ export async function pegarProdutosDoCarrinho(id) {
     return produtos
 
 }
+
+export async function pegarProdutoTempoRealCarrinho(id, setProdutos) {
+    const carrinho = doc(db, 'Carrinhos', id)
+    const documento = await getDoc(carrinho)
+    const dadosDoProduto = documento.data()
+    const chaves = Object.keys(dadosDoProduto)
+    let produtos = []
+    for (let c = 0; c < chaves.length; c++) {
+        const docProd = doc(db, 'Produtos', chaves[c]) 
+        const produto = await getDoc(docProd)
+        const dadosDoProduto = { id: produto.id, ...produto.data() }
+        produtos.push(dadosDoProduto)
+    }
+
+    setProdutos(produtos)
+}

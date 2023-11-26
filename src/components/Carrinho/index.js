@@ -5,7 +5,7 @@ import { estilos } from './estilos'
 import { auth } from './../../config/firebase'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Produto } from './../Produto/index'
-import { pegarProdutos, pegarProdutoTempoReal, pegarProdutosDoCarrinho } from './../../servicos/firestore'
+import { pegarProdutos, pegarProdutoTempoRealCarrinho, pegarProdutosDoCarrinho } from './../../servicos/firestore'
 
 
 
@@ -26,7 +26,7 @@ export function Carrinho( {navigation} ) {
     }
     useEffect(() => {
         pegarDados()
-        
+        pegarProdutoTempoRealCarrinho(user.uid, setProdutos)
         
     }, [])
 
