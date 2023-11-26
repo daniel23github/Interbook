@@ -28,7 +28,7 @@ export function Login( {navigation} ) {
             setMensagemError('')
             setStatusError('')
             const resultado = await logar(email, senha)
-            if (resultado == 'Sucesso') {
+            if (resultado == 'sucesso') {
                 navigation.navigate('Home')
                 setEmail('')
                 setSenha('')
@@ -43,7 +43,7 @@ export function Login( {navigation} ) {
 
     return (
         <View style={estilos.container}>
-            <Image style={estilos.imagem} source={require('../../../assets/login.png')}/>
+            <Image style={estilos.imagem} source={{uri: 'https://firebasestorage.googleapis.com/v0/b/interbook-bf146.appspot.com/o/imagens%2FLogin.png?alt=media&token=6d9353cc-b85c-4107-80e5-740c34db4ad3'}}/>
             <Text style={estilos.textoLogin}>LOGIN</Text>
             <TextInput 
                 label='Email'
@@ -54,6 +54,7 @@ export function Login( {navigation} ) {
                 error={statusError == 'email'}
                 style={estilos.input} 
                 theme={{roundness: 50}} />
+                <Text>{email}</Text>
                 {statusError == 'email' ? <HelperText type="error" visible={statusError == 'email'}>
                     {mensagemError}
                 </HelperText> : null}
@@ -72,6 +73,7 @@ export function Login( {navigation} ) {
                 }
                 style={estilos.input} 
                 theme={{roundness: 50}} />
+                <Text>{senha}</Text>
                 {statusError == 'senha' ? <HelperText type="error" visible={statusError == 'senha'}>
                     {mensagemError}
                 </HelperText> : null}

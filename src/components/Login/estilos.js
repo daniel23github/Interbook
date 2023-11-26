@@ -1,17 +1,17 @@
-import {StyleSheet} from 'react-native'
+import {StyleSheet} from "react-native"
 
 export const estilos = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#38B6FF'
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#38B6FF"
 
     },
 
     input: {
         height: 50,
-        width: "320px",
+        width: 320,
         paddingHorizontal: 10,
         marginTop: 10,
         backgroundColor: "#fff",
@@ -24,36 +24,34 @@ export const estilos = StyleSheet.create({
     },
 
     textoLogin: {
-        fontFamily: 'alatsi',
-        fontweight: 'bolder',
-        backgroundColor: '#76CBFC',
-        paddingLeft: '90px',
-        paddingRight: '90px ',
-        paddingBottom: '6px',
-        paddingTop: '6px',
-        borderRadius: '20px',
-        color: '#0E8CD6',
-        fontSize: '45px',
-        margin: '10px'
+        fontWeight: "bold",
+        backgroundColor: "#76CBFC",
+        paddingLeft: 90,
+        paddingRight: 90,
+        paddingBottom: 6,
+        paddingTop: 6,
+        borderRadius: 20,
+        color: "#0E8CD6",
+        fontSize: 45,
+        margin: 10
 
     },
 
     textoLoginEntrar: {
-        fontFamily: 'alatsi',
-        fontweight: 'bolder',
-        backgroundColor: '#76CBFC',
-        paddingLeft: '40px',
-        paddingRight: '40px ',
-        paddingBottom: '6px',
-        paddingTop: '6px',
-        borderRadius: '20px',
-        color: '#0E8CD6',
-        fontSize: '25px',
-        margin: '10px'
+        fontWeight: 'bold',
+        backgroundColor: "#76CBFC",
+        paddingLeft: 40,
+        paddingRight: 40,
+        paddingBottom: 6,
+        paddingTop: 6,
+        borderRadius: 20,
+        color: "#0E8CD6",
+        fontSize: 25,
+        margin: 10
 
     },
 
     textoLoginCadastrar: {
-        color: '#D9D9D9'
+        color: "#D9D9D9"
     }
 })

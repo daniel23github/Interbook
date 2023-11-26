@@ -21,7 +21,7 @@ export function Cadastrar( {navigation} ) {
         setNome('')
         navigation.navigate('Login')
     }
-    
+
     async function realizarCadastro() {
         if (nome == '') {
             setMensagemError('Não pode deixar o nome vazio!')
@@ -49,7 +49,7 @@ export function Cadastrar( {navigation} ) {
 
         }
         else {
-            const resultado = await cadastrar({nome, senha, email })
+            const resultado = await cadastrar({ nome, senha, email })
             setStatusSnakbar(true)
             if (resultado == 'sucesso') {
                 setMensagemSnakbar("E-mail cadastrado com sucesso!")

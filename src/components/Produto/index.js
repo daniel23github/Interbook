@@ -2,11 +2,11 @@ import React, {useState} from 'react'
 import { estilos } from './estilos'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 
-export function Produto({ navigation, informacao, precoAntigo, precoAtual, imagem }) {
+export function Produto({ id, navigation, informacao, precoAntigo, precoAtual, imagem }) {
     const desconto = ((Number(precoAntigo) - Number(precoAtual)) * 100) / Number(precoAntigo);
   
     const irParaTelaProduto = () => {
-      navigation.navigate('telaProduto');
+      navigation.navigate('telaProduto', id);
     };
   
     return (

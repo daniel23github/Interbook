@@ -1,14 +1,12 @@
-import {StyleSheet} from 'react-native'
+import { StyleSheet } from "react-native"
 
 export const estilos = StyleSheet.create({
     container: {
-        backgroundColor: '#38B6FF',
-        color: '#fff',
-        borderRadius: '10px',
-        textAlign: 'center',
-        margin: '10px',
-        padding: '10px',
-        paddingBottom: '20px'
-
+        backgroundColor: "#38B6FF",
+        borderRadius: 10,
+        textAlign: "center",
+        margin: 10,
+        padding: 10,
+        paddingBottom: 20
     }
 })

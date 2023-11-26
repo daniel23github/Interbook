@@ -1,42 +1,39 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from "react-native"
 
-const cor1 = '#38B6FF'
+const cor1 = "#38B6FF"
 
 export const estilos = StyleSheet.create({
-
     navbar: {
         backgroundColor: cor1,
-        alignItems: 'center'
+        alignItems: "center"
     },
-
+    
     icones_navbar: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        width: '100vw'
-
+        flexDirection: "row",
+        justifyContent: "space-between",
+        width: '80%', // Ajuste da largura com base na tela
+        paddingHorizontal: 10,
+        marginHorizontal: 4
     },
-
+    
     icones: {
-        margin: '10px'
-
+        marginHorizontal: 10
     },
-
+    
     input: {
         height: 40,
-        width: "88%",
+        width: "80%", // Ajuste para 88% da largura da tela
         paddingHorizontal: 10,
         marginTop: 10,
         backgroundColor: "#fff",
         borderRadius: 50,
-        marginTop: '8vh',
-        marginBottom: '12px'
+        marginTop: "8%", // Ajuste para 8% da altura da tela
+        marginBottom: 12
     },
-
+    
     banner: {
-        width: '100%',
-        height: '70%',
-        backgroundSize: 'cover'
-    },
-
+        width: "100%",
+        height: "70%", // Ajuste para 70% da altura da tela
+        resizeMode: "cover"
+    }
 })

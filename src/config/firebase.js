@@ -3,7 +3,6 @@ import { initializeAuth } from 'firebase/auth';
 import { getFirestore} from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
 
-//Aqui vocês devem colocar as suas credenciais
 const firebaseConfig = {
     apiKey: "AIzaSyC3ETuwJ1TAOwHJJMDrHkCFh6gzdvl5xk8",
     authDomain: "interbook-bf146.firebaseapp.com",

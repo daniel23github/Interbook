@@ -1,17 +1,16 @@
-import {StyleSheet} from 'react-native'
+import { StyleSheet, Dimensions } from "react-native"
 
 export const estilos = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#38B6FF'
-
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#38B6FF"
     },
 
     input: {
         height: 50,
-        width: "320px",
+        width: Dimensions.get('window').width - 40, // Ajuste de largura para utilizar a largura da tela
         paddingHorizontal: 10,
         marginTop: 10,
         backgroundColor: "#fff",
@@ -19,39 +18,32 @@ export const estilos = StyleSheet.create({
     },
 
     textoCadastro: {
-        fontFamily: 'alatsi',
-        fontweight: 'bolder',
-        backgroundColor: '#76CBFC',
-        paddingLeft: '40px',
-        paddingRight: '40px ',
-        paddingBottom: '6px',
-        paddingTop: '6px',
-        borderRadius: '20px',
-        color: '#0E8CD6',
-        fontSize: '25px',
-        margin: '10px'
-
+        fontFamily: "alatsi",
+        fontWeight: "bold", // Corrigido de 'fontweight' para 'fontWeight'
+        backgroundColor: "#76CBFC",
+        paddingHorizontal: 40,
+        paddingVertical: 6,
+        borderRadius: 20,
+        color: "#0E8CD6",
+        fontSize: 25,
+        margin: 10
     },
 
     textoCadastroCadastrar: {
-        fontFamily: 'alatsi',
-        fontweight: 'bolder',
-        backgroundColor: '#76CBFC',
-        paddingLeft: '40px',
-        paddingRight: '40px ',
-        paddingBottom: '6px',
-        paddingTop: '6px',
-        borderRadius: '20px',
-        color: '#0E8CD6',
-        fontSize: '25px',
-        margin: '10px'
-
+        fontWeight: "bold",
+        backgroundColor: "#76CBFC",
+        paddingHorizontal: 40,
+        paddingVertical: 6,
+        borderRadius: 20,
+        color: "#0E8CD6",
+        fontSize: 25,
+        margin: 10
     },
+
     imagem: {
-        width: '100%',
+        width: "100%",
         height: 190,
         borderRadius: 5,
         marginVertical: 15,
     }
-
 })

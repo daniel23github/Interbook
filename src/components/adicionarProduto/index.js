@@ -1,15 +1,16 @@
 import React, {useState} from 'react'
-import {logar, cadastrar, verificarErro} from './../../servicos/cadastroLogin'
+import {logar, cadastrar, verificarErro} from '../../servicos/cadastroLogin'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { TextInput, HelperText, Snackbar } from 'react-native-paper'
 import { estilos } from './estilos'
-import { salvarImagem, cadastrarProduto } from './../../servicos/firestore'
+import { salvarImagem, cadastrarProduto } from '../../servicos/firestore'
 import * as ImagePicker from 'expo-image-picker'
 
-export function adicionarProduto( {navigation} ) {
+export function AdicionarProduto( {navigation} ) {
     const [informacao, setInformacao] = useState('')
     const [precoAntigo, setPrecoAntigo] = useState('')
     const [precoAtual, setPrecoAtual] = useState('')
+    const [estrelas, setEstrelas] = useState('')
     const [imagem, setImagem] = useState('')
     const [mensagemError, setMensagemError] = useState('')
     const [statusSnakbar, setStatusSnakbar] = useState(false)
@@ -44,6 +45,10 @@ export function adicionarProduto( {navigation} ) {
             setMensagemError('Não pode deixar a imagem vazia!')
             setStatusError('imagem')
         }
+        else if ( estrelas == 0) {
+            setMensagemError('Não pode deixar a quantidade estrelas vazia!')
+            setStatusError('estrelas')
+        }
         else {
             const resultado = await adicionaImagem()
             setStatusSnakbar(true)
@@ -74,7 +79,7 @@ export function adicionarProduto( {navigation} ) {
 
     async function adicionaImagem() {
         const url = await salvarImagem(imagem, informacao)
-        const resultado = await cadastrarProduto({informacao, precoAntigo, precoAtual, url})
+        const resultado = await cadastrarProduto({informacao, precoAntigo, precoAtual, url, estrelas})
         return resultado
         
         
@@ -116,6 +121,17 @@ export function adicionarProduto( {navigation} ) {
             {statusError == 'precoAtual' ? <HelperText type="error" visible={statusError == 'precoAtual'}>
                     {mensagemError}
                 </HelperText> : null}
+            <TextInput
+                label="estrelas"
+                value={estrelas}
+                onChangeText={setEstrelas}
+                mode="outlined"
+                error={statusError == 'estrelas'}
+                style={estilos.input} 
+                theme={{roundness: 50}} />
+            {statusError == 'estrelas' ? <HelperText type="error" visible={statusError == 'estrelas'}>
+                    {mensagemError}
+                </HelperText> : null}
             {statusError == 'imagem' ? <HelperText type="error" visible={statusError == 'imagem'}>
                     {mensagemError}
                 </HelperText> : null}
@@ -123,7 +139,7 @@ export function adicionarProduto( {navigation} ) {
                     {mensagemError}
                 </HelperText>
             <TouchableOpacity style={estilos.imagem}onPress={escolherImagem}>
-                <Image style={estilos.imagem} source={imagem ? { uri: imagem } : require('../../../assets/upload.jpeg')} />
+                <Image style={estilos.imagem} source={imagem ? { uri: imagem } : {uri : 'https://firebasestorage.googleapis.com/v0/b/interbook-bf146.appspot.com/o/imagens%2Fupload.jpeg?alt=media&token=273b6035-2cbd-4d67-a1d2-fc207f4be56e'}} />
             </TouchableOpacity>
             <TouchableOpacity onPress={realizarCadastro}>
                 <Text style={estilos.textoCadastroCadastrar}>Cadastrar</Text>

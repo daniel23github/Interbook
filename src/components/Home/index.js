@@ -54,14 +54,14 @@ export function Home( {navigation} ) {
             <View style={estilos.containerDestaques}>
                 <Text style={estilos.texto}>Ofertas do Dia</Text>
                 <View>  
-                        { produtos.length > 0 && (<FlatList
-                            data={produtos}
-                            renderItem={({ item }) => <Produto navigation={navigation} informacao={item.informacao} precoAntigo={item['precoAntigo']} precoAtual={item['precoAtual']} imagem={item['url']}/>}
-                            keyExtractor={item => item.id}
-                            refreshing={refreshing}
-                            onRefresh={pegarDados}
-                        />)
-                        }
+                    { produtos.length > 0 && (<FlatList
+                        data={produtos}
+                        renderItem={({ item }) => <Produto id={item.id}navigation={navigation} informacao={item.informacao} precoAntigo={item['precoAntigo']} precoAtual={item['precoAtual']} imagem={item['url']}/>}
+                        keyExtractor={item => item.id}
+                        refreshing={refreshing}
+                        onRefresh={pegarDados}
+                    />)
+                    }
                     
                 </View>
             </View>

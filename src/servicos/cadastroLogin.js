@@ -25,7 +25,9 @@ export async function cadastrar(dados) {
     const nome = dados.nome
     const email = dados.email
         try {
+            console.log('opa')
             await setDoc(doc(db, 'Users', resultado.user.uid), {nome, email})
+            await setDoc(doc(db, 'Carrinhos', resultado.user.uid), {})
             return 'sucesso'
         }
         catch (error)  {
@@ -37,11 +39,12 @@ export async function cadastrar(dados) {
 export async function logar(email, senha) {
     const resultado = await signInWithEmailAndPassword(auth, email, senha)
         .then((dadosDoUsuario) => {
-            return 'Sucesso'
+            console.log(dadosDoUsuario)
+            return "sucesso"
         })
         .catch((error) => {
             console.log(error)
-            return 'Erro ao logar'
+            return "Erro ao logar"
         })
     return resultado
 }

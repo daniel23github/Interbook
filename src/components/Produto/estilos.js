@@ -1,61 +1,59 @@
-import {StyleSheet} from 'react-native'
+import { StyleSheet, Dimensions } from "react-native"
 
 export const estilos = StyleSheet.create({
     container: {
-        backgroundColor: '#38B6FF',
-        borderRadius: '10px',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-evenly',
-        fontWeight: 'bolder',
-        margin: '6px',
-        flexWrap: 'wrap'
-
+        flex: 1,
+        backgroundColor: "#38B6FF",
+        borderRadius: 10,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-evenly",
+        margin: 6,
+        flexWrap: "wrap"
     },
 
     fundo: {
-        backgroundColor: '#fff',
-        height: '20vh',
-        width: '22vh',
-        borderRadius: '10px',
-        margin: '10px',
-        justifyContent: 'center',
-        textAlign: 'center'
+        backgroundColor: "#fff",
+        height: Dimensions.get("window").height * 0.2,
+        width: Dimensions.get("window").width * 0.22,
+        borderRadius: 10,
+        margin: 10,
+        justifyContent: "center",
+        alignItems: "center"
     },
 
     informacao: {
-        flex: 1,
+        flex: 1
     },
 
     imagem: {
-        backgroundColor: '#fff',
-        height: '18vh',
-        width: '18vh',
-        backgroundSize: 'cover',
-        borderRadius: '10px',
-        margin: '10px'
+        backgroundColor: "#fff",
+        height: Dimensions.get("window").height * 0.18,
+        width: Dimensions.get("window").width * 0.18,
+        borderRadius: 10,
+        margin: 10
     },
 
     textoInformacao: {
-        color: 'white',
-        fontSize: '0.8em'
+        color: "white",
+        fontSize: 16 // Ajuste o tamanho conforme necessário
     },
 
     precoAntigo: {
-        color: '#AFAAAA',
-        fontSize: '0.6em',
-        textDecorationLine: 'line-through'
+        color: "#AFAAAA",
+        fontSize: 12,
+        textDecorationLine: "line-through"
     },
 
     precoAtual: {
-        color: '#0E8CD6',
-        fontSize: '1em',
-        fontWeight: 'bold'
+        color: "#0E8CD6",
+        fontSize: 18, // Ajuste o tamanho conforme necessário
+        fontWeight: "bold"
     },
 
     desconto: {
-        marginLeft: '8px',
-        color: 'white',
-        fontSize: '0.5em'
+        marginLeft: 8,
+        color: "white",
+        fontSize: 10 // Ajuste o tamanho conforme necessário
     }
 })

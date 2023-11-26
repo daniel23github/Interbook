@@ -1,12 +1,11 @@
-import {StyleSheet} from 'react-native'
+import { StyleSheet } from "react-native"
 
 export const estilos = StyleSheet.create({
     container: {
-        backgroundColor: '#fff',
-        height: '18vh',
-        width: '20vh',
-        borderRadius: '10px',
-        margin: '10px'
-
+        backgroundColor: "#fff",
+        height: 50, // Use valores absolutos em pixels para height e width
+        width: 50,
+        borderRadius: 10,
+        margin: 10
     }
 })
