@@ -22,7 +22,7 @@ export function AdicionarProduto( {navigation} ) {
         setPrecoAntigo('')
         setPrecoAtual('')
         setImagem('')
-        navigation.navigate('Home')
+        navigation.replace('Home')
     }
 
     async function realizarCadastro() {

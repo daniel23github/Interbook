@@ -19,7 +19,7 @@ export function Cadastrar( {navigation} ) {
         setSenha('')
         setConfirmaSenha('')
         setNome('')
-        navigation.navigate('Login')
+        navigation.replace('Login')
     }
 
     async function realizarCadastro() {

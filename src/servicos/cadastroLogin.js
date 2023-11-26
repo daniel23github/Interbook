@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword, AuthErrorCodes, signInWithEmailAndPassword } from "firebase/auth"
 import { auth, db, app } from "../config/firebase"
-import { collection, addDoc, getDocs, doc, updateDoc, deleteDoc, query, onSnapshot, setDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs, getDoc, doc, updateDoc, deleteDoc, query, onSnapshot, setDoc } from "firebase/firestore";
 
 function verificarErro(error) {
     let mensagem = ''
@@ -28,6 +28,7 @@ export async function cadastrar(dados) {
             console.log('opa')
             await setDoc(doc(db, 'Users', resultado.user.uid), {nome, email})
             await setDoc(doc(db, 'Carrinhos', resultado.user.uid), {})
+            await setDoc(doc(db, 'Favoritos', resultado.user.uid), {})
             return 'sucesso'
         }
         catch (error)  {
@@ -47,4 +48,11 @@ export async function logar(email, senha) {
             return "Erro ao logar"
         })
     return resultado
+}
+
+export async function coletarDadosUsuario(id) {
+    const documento = doc(db, 'Users', id)
+    const dados = await getDoc(documento)
+    const data = dados.data()
+    return data
 }

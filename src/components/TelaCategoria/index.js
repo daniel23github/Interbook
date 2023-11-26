@@ -5,18 +5,18 @@ import { estilos } from './estilos'
 import { auth } from './../../config/firebase'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Produto } from './../Produto/index'
-import { pegarProdutos, pegarProdutoTempoRealCarrinho, pegarProdutosDoCarrinho } from './../../servicos/firestore'
+import { pegarProdutos, pegarProdutosCategoria, pegarProdutosCategoriaTempoReal } from './../../servicos/firestore'
 
 
 
-export function Carrinho( {navigation} ) {
+export function TelaCategoria( {navigation, route} ) {
     const [produtos, setProdutos] = useState([])
     const [refreshing, setRefreshing] = useState(false)
     const user = auth.currentUser
     async function pegarDados() {
         setRefreshing(true)
         try {
-            const produtosPegos = await pegarProdutosDoCarrinho(user.uid)
+            const produtosPegos = await pegarProdutosCategoria(route?.params?.id)
             setProdutos(produtosPegos)
         } catch (error) {
             console.error('Erro ao buscar produtos:', error)
@@ -26,15 +26,15 @@ export function Carrinho( {navigation} ) {
     }
     useEffect(() => {
         pegarDados()
-        pegarProdutoTempoRealCarrinho(user.uid, setProdutos)
+        pegarProdutosCategoriaTempoReal(route?.params, setProdutos)
         
     }, [])
 
     return (
         <View style={estilos.container}>
-            <Text style={estilos.texto}>Carrinho</Text>
+            <Text style={estilos.texto}>{route?.params?.nome}</Text>
             <View>  
-            { produtos.length > 0 && (<FlatList
+                    { produtos.length > 0 && (<FlatList
                         data={produtos}
                         renderItem={({ item }) => <Produto id={item.id} navigation={navigation} informacao={item.informacao} precoAntigo={item['precoAntigo']} precoAtual={item['precoAtual']} imagem={item['url']}/>}
                         keyExtractor={item => item.id}
@@ -44,6 +44,9 @@ export function Carrinho( {navigation} ) {
                     }
                     
             </View>
+            <TouchableOpacity onPress={(navigation.replace('AdicionarParaCategoria', route?.params))} style={estilos.containerBotao}>
+                    <Text style={estilos.adicionar}>Adicionar Livros</Text>
+            </TouchableOpacity>
         </View>
     )
 }

@@ -4,19 +4,19 @@ import { TextInput, HelperText, Snackbar } from 'react-native-paper'
 import { estilos } from './estilos'
 import { auth } from './../../config/firebase'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { Produto } from './../Produto/index'
-import { pegarProdutos, pegarProdutoTempoRealCarrinho, pegarProdutosDoCarrinho } from './../../servicos/firestore'
+import { ProdutoAdicionado } from './../ProdutoAdicionado/index'
+import { pegarProdutos, pegarProdutoTempoReal } from './../../servicos/firestore'
 
 
 
-export function Carrinho( {navigation} ) {
+export function AdicionarDestaque( {navigation} ) {
     const [produtos, setProdutos] = useState([])
     const [refreshing, setRefreshing] = useState(false)
     const user = auth.currentUser
     async function pegarDados() {
         setRefreshing(true)
         try {
-            const produtosPegos = await pegarProdutosDoCarrinho(user.uid)
+            const produtosPegos = await pegarProdutos()
             setProdutos(produtosPegos)
         } catch (error) {
             console.error('Erro ao buscar produtos:', error)
@@ -26,17 +26,18 @@ export function Carrinho( {navigation} ) {
     }
     useEffect(() => {
         pegarDados()
-        pegarProdutoTempoRealCarrinho(user.uid, setProdutos)
+        pegarProdutoTempoReal(setProdutos)
+        
         
     }, [])
 
     return (
         <View style={estilos.container}>
-            <Text style={estilos.texto}>Carrinho</Text>
+            <Text style={estilos.texto}>Adicionar aos destaques</Text>
             <View>  
             { produtos.length > 0 && (<FlatList
                         data={produtos}
-                        renderItem={({ item }) => <Produto id={item.id} navigation={navigation} informacao={item.informacao} precoAntigo={item['precoAntigo']} precoAtual={item['precoAtual']} imagem={item['url']}/>}
+                        renderItem={({ item }) => <ProdutoAdicionado id={item.id} navigation={navigation} informacao={item.informacao} precoAntigo={item['precoAntigo']} precoAtual={item['precoAtual']} imagem={item['url']}/>}
                         keyExtractor={item => item.id}
                         refreshing={refreshing}
                         onRefresh={pegarDados}

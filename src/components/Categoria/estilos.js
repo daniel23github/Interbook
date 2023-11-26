@@ -7,6 +7,7 @@ export const estilos = StyleSheet.create({
         textAlign: "center",
         margin: 10,
         padding: 10,
-        paddingBottom: 20
+        paddingBottom: 20,
+        color: 'white'
     }
 })

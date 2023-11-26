@@ -4,27 +4,31 @@ const cor1 = "#38B6FF"
 
 export const estilos = StyleSheet.create({
     container: {
-        marginTop: 130,
-        backgroundColor: "white"
+        backgroundColor: "white",
+        flexWrap: 'wrap'
     },
 
     imagem: {
-        height: Dimensions.get("window").height * 0.7,
-        width: Dimensions.get("window").width * 0.6,
+        height: 360,
+        width: 360,
         resizeMode: "cover",
-        marginLeft: "10%"
+        marginLeft: "5%",
+        marginRight: "5%",
     },
 
     icones: {
         margin: 10,
-        marginRight: 10
+        marginRight: 10,
+        marginLeft: "10%",
     },
 
     containerImagem: {
+        height: 400,
         marginTop: 15,
         backgroundColor: "white",
         flexDirection: "row",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        flexWrap: 'wrap'
     },
 
     containerTexto: {
@@ -81,7 +85,8 @@ export const estilos = StyleSheet.create({
         borderRadius: 4,
         textAlign: "center",
         color: "white",
-        width: "60%"
+        width: "60%",
+        margin: 10
     },
 
     containerModal: {
@@ -100,6 +105,22 @@ export const estilos = StyleSheet.create({
         borderRadius: 4,
         textAlign: "center",
         color: "white",
-        width: "30%"
+        width: 100,
+        margin: 10
+    },
+
+    viewModal1: {
+        flex: 1, 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        backgroundColor: '#00000080',
+    },
+
+    viewModal2: {
+        backgroundColor: '#fff', 
+        padding: 20, 
+        borderRadius: 10, 
+        width: '80%', 
+        alignItems: 'center'
     }
 })

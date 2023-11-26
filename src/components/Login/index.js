@@ -29,7 +29,7 @@ export function Login( {navigation} ) {
             setStatusError('')
             const resultado = await logar(email, senha)
             if (resultado == 'sucesso') {
-                navigation.navigate('Home')
+                navigation.replace('Home')
                 setEmail('')
                 setSenha('')
             } else {
@@ -54,7 +54,6 @@ export function Login( {navigation} ) {
                 error={statusError == 'email'}
                 style={estilos.input} 
                 theme={{roundness: 50}} />
-                <Text>{email}</Text>
                 {statusError == 'email' ? <HelperText type="error" visible={statusError == 'email'}>
                     {mensagemError}
                 </HelperText> : null}
@@ -73,7 +72,6 @@ export function Login( {navigation} ) {
                 }
                 style={estilos.input} 
                 theme={{roundness: 50}} />
-                <Text>{senha}</Text>
                 {statusError == 'senha' ? <HelperText type="error" visible={statusError == 'senha'}>
                     {mensagemError}
                 </HelperText> : null}

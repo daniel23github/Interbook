@@ -5,18 +5,18 @@ import { estilos } from './estilos'
 import { auth } from './../../config/firebase'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Produto } from './../Produto/index'
-import { pegarProdutos, pegarProdutoTempoRealCarrinho, pegarProdutosDoCarrinho } from './../../servicos/firestore'
+import { pegarProdutos, pegarProdutoTempoRealFavorito, pegarProdutosDoFavorito } from './../../servicos/firestore'
 
 
 
-export function Carrinho( {navigation} ) {
+export function Favorito( {navigation} ) {
     const [produtos, setProdutos] = useState([])
     const [refreshing, setRefreshing] = useState(false)
     const user = auth.currentUser
     async function pegarDados() {
         setRefreshing(true)
         try {
-            const produtosPegos = await pegarProdutosDoCarrinho(user.uid)
+            const produtosPegos = await pegarProdutosDoFavorito(user.uid)
             setProdutos(produtosPegos)
         } catch (error) {
             console.error('Erro ao buscar produtos:', error)
@@ -26,13 +26,13 @@ export function Carrinho( {navigation} ) {
     }
     useEffect(() => {
         pegarDados()
-        pegarProdutoTempoRealCarrinho(user.uid, setProdutos)
+        pegarProdutoTempoRealFavorito(user.uid, setProdutos)
         
     }, [])
 
     return (
         <View style={estilos.container}>
-            <Text style={estilos.texto}>Carrinho</Text>
+            <Text style={estilos.texto}>Favoritos</Text>
             <View>  
             { produtos.length > 0 && (<FlatList
                         data={produtos}
