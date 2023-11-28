@@ -12,12 +12,19 @@ import { pegarProdutos, pegarProdutoTempoRealCarrinho, pegarProdutosDoCarrinho }
 export function Carrinho( {navigation} ) {
     const [produtos, setProdutos] = useState([])
     const [refreshing, setRefreshing] = useState(false)
+    const [soma, setSoma] = useState(0)
     const user = auth.currentUser
     async function pegarDados() {
         setRefreshing(true)
+        let s = 0
         try {
             const produtosPegos = await pegarProdutosDoCarrinho(user.uid)
             setProdutos(produtosPegos)
+            for (let c = 0; c < produtosPegos.length; c++) {
+                s = s + Number(produtosPegos[c].precoAtual)
+                console.log(s)
+            }
+            setSoma(s)
         } catch (error) {
             console.error('Erro ao buscar produtos:', error)
         }
@@ -43,6 +50,9 @@ export function Carrinho( {navigation} ) {
                     />)
                     }
                     
+            </View>
+            <View style={estilos.containerSoma}>
+                <Text style={estilos.soma}>R$ {soma}</Text>
             </View>
         </View>
     )

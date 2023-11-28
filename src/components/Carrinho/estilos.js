@@ -12,6 +12,18 @@ export const estilos = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center'
+    },
+
+    containerSoma: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    soma: {
+        color: cor1,
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center'
     }
 
 })
