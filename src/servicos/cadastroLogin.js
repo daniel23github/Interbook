@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword, AuthErrorCodes, signInWithEmailAndPassword } from "firebase/auth"
-import { auth, db, app } from "../config/firebase"
-import { collection, addDoc, getDocs, getDoc, doc, updateDoc, deleteDoc, query, onSnapshot, setDoc } from "firebase/firestore";
+import { auth, db } from "../config/firebase"
+import { getDoc, doc, setDoc } from "firebase/firestore";
 
 function verificarErro(error) {
     let mensagem = ''
@@ -21,11 +21,10 @@ function verificarErro(error) {
 }
 
 export async function cadastrar(dados) {
-    const resultado = await createUserWithEmailAndPassword(auth, dados.email, dados.senha)
     const nome = dados.nome
     const email = dados.email
         try {
-            console.log('opa')
+            const resultado = await createUserWithEmailAndPassword(auth, dados.email, dados.senha)
             await setDoc(doc(db, 'Users', resultado.user.uid), {nome, email})
             await setDoc(doc(db, 'Carrinhos', resultado.user.uid), {})
             await setDoc(doc(db, 'Favoritos', resultado.user.uid), {})
@@ -40,7 +39,6 @@ export async function cadastrar(dados) {
 export async function logar(email, senha) {
     const resultado = await signInWithEmailAndPassword(auth, email, senha)
         .then((dadosDoUsuario) => {
-            console.log(dadosDoUsuario)
             return "sucesso"
         })
         .catch((error) => {

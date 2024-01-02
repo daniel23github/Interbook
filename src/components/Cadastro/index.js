@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import {logar, cadastrar, verificarErro} from './../../servicos/cadastroLogin'
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react'
+import { cadastrar } from './../../servicos/cadastroLogin'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { TextInput, HelperText, Snackbar } from 'react-native-paper'
 import { estilos } from './estilos'
 
@@ -50,7 +50,6 @@ export function Cadastrar( {navigation} ) {
         }
         else {
             const resultado = await cadastrar({ nome, senha, email })
-            setStatusSnakbar(true)
             if (resultado == 'sucesso') {
                 setMensagemSnakbar("E-mail cadastrado com sucesso!")
                 setTimeout(limpaCampos, 3000)
@@ -58,6 +57,7 @@ export function Cadastrar( {navigation} ) {
             else {
                 setMensagemSnakbar(resultado)
             }
+            setStatusSnakbar(true)
             setMensagemError('')
             setStatusError('')
         }

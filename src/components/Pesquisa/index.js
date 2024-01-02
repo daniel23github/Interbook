@@ -1,11 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList } from 'react-native'
-import { TextInput, HelperText, Snackbar } from 'react-native-paper'
+import { View, Text, FlatList } from 'react-native'
 import { estilos } from './estilos'
-import { auth } from './../../config/firebase'
-import Icon from 'react-native-vector-icons/FontAwesome'
 import { Produto } from './../Produto/index'
-import { pegarProdutos, Buscar, BuscarTempoReal } from './../../servicos/firestore'
+import { Buscar, BuscarTempoReal } from './../../servicos/firestore'
 
 
 

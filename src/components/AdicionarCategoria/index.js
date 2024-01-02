@@ -1,10 +1,8 @@
 import React, {useState} from 'react'
-import {logar, cadastrar, verificarErro} from '../../servicos/cadastroLogin'
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { TextInput, HelperText, Snackbar } from 'react-native-paper'
 import { estilos } from './estilos'
 import { adicionarCategorias } from '../../servicos/firestore'
-import * as ImagePicker from 'expo-image-picker'
 
 export function AdicionarCategoria( {navigation} ) {
     const [nome, setNome] = useState('')

@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList } from 'react-native'
-import { TextInput, HelperText, Snackbar } from 'react-native-paper'
+import { View, Text, FlatList } from 'react-native'
 import { estilos } from './estilos'
 import { auth } from './../../config/firebase'
-import Icon from 'react-native-vector-icons/FontAwesome'
 import { ProdutoAdicionadoCategoria } from './../ProdutoAdicionadoCategoria/index'
 import { pegarProdutos, pegarProdutoTempoReal } from './../../servicos/firestore'
 

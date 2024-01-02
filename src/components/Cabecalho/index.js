@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Button } from 'react-native'
-import { TextInput, HelperText, Snackbar, DataTable } from 'react-native-paper'
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
+import { TextInput } from 'react-native-paper'
 import { estilos } from './estilos'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Modal from 'react-native-modal'

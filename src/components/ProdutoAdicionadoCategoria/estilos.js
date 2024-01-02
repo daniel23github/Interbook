@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from "react-native"
+import { StyleSheet } from "react-native"
 
 export const estilos = StyleSheet.create({
     container: {
@@ -36,7 +36,7 @@ export const estilos = StyleSheet.create({
 
     textoInformacao: {
         color: "white",
-        fontSize: 16 // Ajuste o tamanho conforme necessário
+        fontSize: 16 
     },
 
     precoAntigo: {
@@ -47,13 +47,13 @@ export const estilos = StyleSheet.create({
 
     precoAtual: {
         color: "#0E8CD6",
-        fontSize: 18, // Ajuste o tamanho conforme necessário
+        fontSize: 18, 
         fontWeight: "bold"
     },
 
     desconto: {
         marginLeft: 8,
         color: "white",
-        fontSize: 10 // Ajuste o tamanho conforme necessário
+        fontSize: 10 
     }
 })

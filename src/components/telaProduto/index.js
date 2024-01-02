@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, Button } from 'react-native'
-import { TextInput, HelperText, Snackbar } from 'react-native-paper'
+import { View, Text, Image, TouchableOpacity, ScrollView, Modal } from 'react-native'
+import { Snackbar } from 'react-native-paper'
 import { estilos } from './estilos'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { pegarProdutos, pegarProdutoTempoReal, pegarProduto, adicionarProdutoNoCarrinho, adicionarProdutoNoFavorito } from '../../servicos/firestore'
+import { pegarProduto, adicionarProdutoNoCarrinho, adicionarProdutoNoFavorito } from '../../servicos/firestore'
 import { auth } from '../../config/firebase'
 
 export function TelaProduto( {navigation, route} ) {

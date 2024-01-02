@@ -1,6 +1,6 @@
 import { db } from "../config/firebase";
-import { collection, addDoc, getDocs, getDoc, doc, updateDoc, deleteDoc, query, onSnapshot, setDoc } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL} from 'firebase/storage'
+import { collection, addDoc, getDocs, getDoc, doc, updateDoc, query, onSnapshot, setDoc } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL} from 'firebase/storage'
 
 import { storage } from './../config/firebase'
 

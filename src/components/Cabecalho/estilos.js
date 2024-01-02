@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from "react-native"
+import { StyleSheet } from "react-native"
 
 const cor1 = "#38B6FF"
 
@@ -11,7 +11,7 @@ export const estilos = StyleSheet.create({
     icones_navbar: {
         flexDirection: "row",
         justifyContent: "space-between",
-        width: '100%', // Ajuste da largura com base na tela
+        width: '100%',
         paddingHorizontal: 10,
         marginHorizontal: 4
     },
@@ -23,12 +23,12 @@ export const estilos = StyleSheet.create({
     
     input: {
         height: 40,
-        width: "88%", // Ajuste para 88% da largura da tela
+        width: "88%",
         paddingHorizontal: 10,
         marginTop: 10,
         backgroundColor: "#fff",
         borderRadius: 50,
-        marginTop: 60, // Ajuste para 8% da altura da tela
+        marginTop: 60,
         marginBottom: 12
     },
 

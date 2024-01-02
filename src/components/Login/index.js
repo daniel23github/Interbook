@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {logar, cadastrar, verificarErro} from './../../servicos/cadastroLogin'
+import { logar } from './../../servicos/cadastroLogin'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { TextInput, HelperText, Snackbar } from 'react-native-paper'
 import { estilos } from './estilos'

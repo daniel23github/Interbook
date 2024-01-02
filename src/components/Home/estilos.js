@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from "react-native"
+import { StyleSheet } from "react-native"
 
 const cor1 = "#38B6FF"
 
@@ -9,7 +9,7 @@ export const estilos = StyleSheet.create({
 
     banner: {
         width: "100%",
-        height: 180, // Ajuste para 70% da altura da tela
+        height: 180, 
         resizeMode: "cover"
     },
 
@@ -25,7 +25,7 @@ export const estilos = StyleSheet.create({
 
     texto: {
         color: "#0E8CD6",
-        fontSize: 18, // Definir um tamanho de fonte em pontos
+        fontSize: 18, 
     },
     
     destaques: {
@@ -34,7 +34,7 @@ export const estilos = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-evenly",
-        fontWeight: "bold", // A propriedade correta é 'bold', não 'bolder'
-        marginVertical: 6 // Alterado para um valor vertical para dar espaço entre os destaques
+        fontWeight: "bold",
+        marginVertical: 6 
     },
 })

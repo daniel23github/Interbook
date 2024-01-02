@@ -13,7 +13,7 @@ export const estilos = StyleSheet.create({
 
     imagem: {
         backgroundColor: "#fff",
-        height: 90, // Use valores absolutos em pixels para height e width
+        height: 90, 
         width: 90,
         borderRadius: 10,
     }

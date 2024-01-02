@@ -10,7 +10,7 @@ export const estilos = StyleSheet.create({
 
     input: {
         height: 50,
-        width: Dimensions.get('window').width - 40, // Ajuste de largura para utilizar a largura da tela
+        width: Dimensions.get('window').width - 40, 
         paddingHorizontal: 10,
         marginTop: 10,
         backgroundColor: "#fff",
@@ -18,7 +18,7 @@ export const estilos = StyleSheet.create({
     },
 
     textoCadastro: {
-        fontWeight: "bold", // Corrigido de 'fontweight' para 'fontWeight'
+        fontWeight: "bold", 
         backgroundColor: "#76CBFC",
         paddingHorizontal: 40,
         paddingVertical: 6,

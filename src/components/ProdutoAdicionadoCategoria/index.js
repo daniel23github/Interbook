@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { estilos } from './estilos'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { adicionarProdutoCategoria } from '../../servicos/firestore';
